@@ -1,0 +1,46 @@
+# Klint-style accordion lampshade configuration.
+#
+# Edit this file and re-run lamp_calc.py or lamp_pattern.py.
+
+# Which base to generate the pattern for.
+active_base = "small"
+
+[bases.small]
+diameter = 4.75   # inner diameter, lip-to-lip (inches)
+height = 2.0      # visible height of wooden cylinder (inches) -- MEASURE THIS
+
+[bases.large]
+diameter = 6.375
+height = 2.5      # MEASURE THIS
+
+[proportions]
+# From reference Klint lamp. Ratio of wooden base height to shade height.
+base_to_shade_height = [66, 730]
+
+# Ratio of shade maximum width (diameter) to shade height.
+shade_width_to_height = [389, 369]
+
+[polygon]
+# The bottom cross-section of the shade is an 18-gon.
+n_sides          = 18
+side_angle_deg   = 150    # interior angle at the 12 "side" vertices
+gap_edge_ratio   = 0.5    # gap edges are this fraction of regular edge length
+n_gap_edges      = 4      # number of gap edges (2 top, 2 bottom)
+n_regular_edges  = 14     # number of regular edges
+
+[accordion]
+n_pleats         = 36     # number of accordion folds
+opening_fraction = 0.85   # how open the pleats are at the widest point (1.0 = flat)
+
+[diamond]
+enabled          = true
+n_rows           = 5      # horizontal divisions (row_height = paper_height / n_rows)
+fold_scheme      = "standard"  # "standard" or "inverted" (swaps M/V on diagonals)
+
+[pattern]
+# "actual" = single page at exact pattern size (for plotters / large-format printers)
+# "letter" = 8.5 x 11, tiled across multiple pages
+# "tabloid" = 11 x 17, tiled
+# Or specify custom [width, height] in inches, e.g. [24, 36]
+page_size   = "actual"
+margin      = 0.5   # inches (only used in tiled mode)

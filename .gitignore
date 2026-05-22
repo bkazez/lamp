@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+cross_section_*.png
+top_view_*.png
+pattern_*.pdf
+lampshade_*.html
+.claude/
